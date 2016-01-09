@@ -6,12 +6,18 @@
 var app = angular.module("myApp", ["ngMaterial"]);
 app.controller("myController", function ($scope) {
 
-    $scope.arr =[];
 
+    $scope.arr = [
+        {incomingText : "pehla", isCheckOrNot : false},
+        {incomingText : "dusra", isCheckOrNot : false}
+    ];
+    $scope.text = "";
 
-    $scope.click = function (text) {
-        $scope.arr.push($scope.text);
-        $scope.text ="";
+    $scope.add = function (text) {
+
+        $scope.arr.push({incomingText : text, isCheckOrNot : false});
+        console.log($scope.arr);
+        $scope.text = "";
+
     }
-
 });

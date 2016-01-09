@@ -12,18 +12,21 @@
     <script src="app.js"></script>
 
 </head>
-<body ng-app="myApp">
-<div ng-controller="myController">
-    <md-toolbar layout="row" layout-align="center center">Material Todo App</md-toolbar>
+<body ng-app="myApp" ng-controller="myController">
+
+<md-toolbar layout="row" layout-align="center center">Material Todo App</md-toolbar>
 
 
-    <md-input-container class="md-block" flex-gt-sm><label>Add todo item</label>
-        <input type="text" ng-model="text">
-    </md-input-container>
+<md-input-container class="md-block" flex-gt-sm><label>Add todo item</label>
+    <input type="text" ng-model="text">
+</md-input-container>
 
-    <md-button class="md-raised md-primary" ng-click="click(text)">add</md-button>
+<md-button class="md-raised md-primary" ng-click="add(text)">add</md-button>
 
-    <div ng-repeat="paste in arr track by $index" >{{paste}}</div>
-</div>
+<md-checkbox ng-model="a" ng-repeat="item in arr">
+    {{item}}
+</md-checkbox>
+
+
 </body>
 </html>
